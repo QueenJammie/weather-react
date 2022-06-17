@@ -13,6 +13,9 @@ export default function App() {
         <h1 class="mt-3 ms-2"><img src={logo} className="App-logo" alt="logo" width="50px" />React Weather app.</h1>
         <Weather city="Sherbrooke" />
       </header>
+      <body>
+        <footer>g</footer>
+      </body>
     </div>
   );
 }
