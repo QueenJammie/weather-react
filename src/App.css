@@ -1,3 +1,8 @@
+ul, li
+{
+  list-style: none;
+}
+
 a
 {
   text-decoration: none;
@@ -46,4 +51,32 @@ a:hover{
   to {
     transform: rotate(360deg);
   }
+}
+
+.list-cities
+{
+  margin-right: 2em;
+}
+.overview
+{
+  position: relative;
+  right: 4em;
+  text-align: right;
+}
+.actual-city
+{
+  font-size: 30px;
+}
+.icon
+{
+  width: 100px;
+}
+.weather2
+{
+  position: relative;
+  left: 70px;
+}
+.temperature
+{
+  font-size: 38px;
 }

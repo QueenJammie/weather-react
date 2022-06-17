@@ -8,13 +8,29 @@ import './App.css';
 
 export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1 class="mt-3 ms-2"><img src={logo} className="App-logo" alt="logo" width="50px" />React Weather app.</h1>
-        <Weather city="Sherbrooke" />
+    <body>
+    <div className="container">
+      <div className="App">
+        <div className="row">
+          <h1 class="mt-3 ms-2"><img src={logo} className="App-logo" alt="logo" width="50px" />React Weather app.</h1>
+        </div>
+          <div class="row">
+          <div class="col-6">
+            <a href="/" className="list-cities">Sherbrooke</a><a href="/" className="list-cities">Montreal</a><a href="/" className="list-cities">Paris</a><a href="/" className="list-cities">London</a>
+            <input type="search" placeholder="Enter a city" class="form-control mb-3" />
+          </div>
+          <div className="col-2">
+            <br />
+            <input type="submit" value="Search" className="btn btn-primary me-2" />
+            <button className="btn btn-success">Current</button>
+          </div>
+        </div>
+          <Weather city="Sherbrooke" />
           <p><a href="https://github.com/QueenJammie/weather/tree/master/src">Open-source code</a> by <a href="https://www.shecodes.io/hall-of-fame?q=Jammie+Lachance-C%C3%B4t%C3%A9&commit=Search">Jammie Lachance-Côté</a></p>
-      </header>
+          
+      </div>
     </div>
+    </body>
   );
 }
 
