@@ -1,3 +1,12 @@
+a
+{
+  text-decoration: none;
+  color: blueviolet;
+}
+a:hover{
+  color: rgb(193, 48, 157);
+}
+
 .App {
   text-align: center;
 }
