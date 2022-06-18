@@ -27,23 +27,22 @@ export default function Weather(props) {
       <div className="container">
         
         <div className="row">
-          <div className="col-1">
+          <div className="col-2">
             <img className="icon" src={sunnyclouds} alt="Sunny Clouds" />
             <span className="temperature">{Math.round(temperature)}°C</span>
           </div>
-          <div className="col-2">
-            <ul className="weather2">
-              <li>Clouds: </li>
-              <li>Humidity: </li>
-              <li>Wind: </li>
+          <div className="col-2 mt-2 weather2">
+            <ul>
+              <li>Clouds</li>
+              <li>Humidity: 92%</li>
+              <li>Wind: 3 km/h</li>
             </ul>
           </div>
-          <div className="col-3 ms-5">
+          <div className="col-2 ms-5 mt-2">
             <ul className="overview">
               <li className="actual-city">{city}</li>
               <li>Friday 15:57</li>
               <li>broken clouds</li>
-              
             </ul>
           </div>
         </div>

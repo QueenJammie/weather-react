@@ -1,6 +1,6 @@
 ul, li
 {
-  list-style: none;
+  list-style: square;
 }
 
 a
@@ -59,13 +59,12 @@ a:hover{
 }
 .overview
 {
-  position: relative;
-  right: 4em;
   text-align: right;
 }
 .actual-city
 {
   font-size: 30px;
+  list-style: none;
 }
 .icon
 {
@@ -73,18 +72,17 @@ a:hover{
 }
 .forecastIcon
 {
-  width: 80px;
+  width: 60px;
 }
 .forecast
 {
   font-size: smaller;
 }
-.weather2
-{
-  position: relative;
-  left: 70px;
-}
 .temperature
 {
   font-size: 38px;
+}
+.weather2
+{
+  text-align: left;
 }
