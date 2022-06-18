@@ -71,6 +71,14 @@ a:hover{
 {
   width: 100px;
 }
+.forecastIcon
+{
+  width: 80px;
+}
+.forecast
+{
+  font-size: smaller;
+}
 .weather2
 {
   position: relative;
