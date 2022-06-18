@@ -8,7 +8,7 @@ export default function Forecast()
     return (
         <div className="row mt-5">
             <div className="col-2 forecast">
-                <p>SAturday<br />
+                <p>Saturday<br />
                 06 / 18<br />
                 Sunny cloudy</p>
                 <p><img className="forecastIcon" src={sunnyclouds} alt="Sunny Clouds" /></p>
