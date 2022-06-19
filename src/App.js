@@ -18,7 +18,7 @@ export default function App() {
         <div className='Weather'>
           <div class="row">
           <div class="col-9">
-            <a href="/" className="list-cities">Sherbrooke</a><a href="/" className="list-cities">Montreal</a><a href="/" className="list-cities">Paris</a><a href="/" className="list-cities">London</a>
+            <a href="/" className="list-cities ms-3">Sherbrooke</a><a href="/" className="list-cities">Montreal</a><a href="/" className="list-cities">Paris</a><a href="/" className="list-cities">London</a>
             <input type="search" placeholder="Enter a city.." class="form-control mb-3" autoFocus="on" />
           </div>
           <div className="col-3">

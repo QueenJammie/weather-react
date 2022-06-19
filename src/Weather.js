@@ -24,23 +24,28 @@ export default function Weather(props) {
   axios.get(apiUrl).then(showCity);
 
   if (temperature) {
+    function farenheitConversion()
+    {
+      return null;
+    }
     return (
       <div className="container">
         
         <div className="row">
-          <div className="col-2">
+          <div className="col-3">
             <img className="icon" src={sunnyclouds} alt="Sunny Clouds" />
-            <span className="temperature">{Math.round(temperature)}°C</span>
-            <p className="currentDayWeather"><span className="minimum">9</span><span className="maximum">15</span></p>
+            <span className="temperature">{Math.round(temperature)}</span>
+            <span className="unit">°C | <a href={farenheitConversion} class="farenheitConversion">°F</a></span>
+            <div className="currentDayWeather"><span className="Minimum">9</span><span className="maximum">15</span></div>
           </div>
-          <div className="col-2 mt-2 weather2">
+          <div className="col-3 mt-2 weather2">
             <ul>
               <li>Clouds</li>
               <li>Humidity: 92%</li>
               <li>Wind: 3 km/h</li>
             </ul>
           </div>
-          <div className="col-2 ms-5 mt-2">
+          <div className="col-3 ms-5 mt-2">
             <ul className="overview">
               <li className="actual-city">{city}</li>
               <li>Friday 15:57</li>

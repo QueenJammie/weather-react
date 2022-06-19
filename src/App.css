@@ -13,7 +13,7 @@ a:hover{
 }
 
 .App {
-  text-align: center;
+  text-align: justify;
 }
 
 .App-logo {
@@ -98,9 +98,10 @@ a:hover{
 {
   color:rgb(48, 147, 193);
 }
-.minimum
+.Minimum
 {
   opacity: 0.6;
+  padding-right: 65px;
 }
 .minimum
 {
@@ -111,7 +112,7 @@ a:hover{
 {
   font-weight: bolder;
 }
-.minimum, .maximum
+.Minimum, .minimum, .maximum
 {
   position: relative;
   top: 20px;
@@ -123,4 +124,14 @@ a:hover{
 .btn
 {
   width: 80px;
+}
+.farenheitConversion:hover
+{
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: underline;
+}
+.unit
+{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
