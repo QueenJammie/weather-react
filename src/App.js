@@ -24,7 +24,7 @@ export default function App() {
           <div className="col-3">
             <br />
             <input type="submit" value="Search" className="btn btn-primary me-2 mb-1" />
-            <input type="button" value="Current" className="btn btn-success" />
+            <input type="button" value="Current" className="btn btn-success mb-1" />
           </div>
         </div>
         
