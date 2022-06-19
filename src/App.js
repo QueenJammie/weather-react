@@ -12,14 +12,14 @@ export default function App() {
       <div className="App">
         <div className="container">
         <body>
-        <div className="row">
+
           <h1 class="ms-2"><img src={logo} className="App-logo" alt="logo" width="50px" />React Weather app.</h1>
-        </div>
+
         <div className='Weather'>
           <div class="row">
           <div class="col-9">
             <a href="/" className="list-cities">Sherbrooke</a><a href="/" className="list-cities">Montreal</a><a href="/" className="list-cities">Paris</a><a href="/" className="list-cities">London</a>
-            <input type="search" placeholder="Enter a city" class="form-control mb-3" />
+            <input type="search" placeholder="Enter a city.." class="form-control mb-3" />
           </div>
           <div className="col-3">
             <br />

@@ -87,6 +87,8 @@ a:hover{
   border: 1px solid #dadde1;
   padding: 30px;
   padding-top: 10px;
+  margin: auto;
+  max-width: 1000px;
 }
 .weather2
 {
@@ -100,6 +102,11 @@ a:hover{
 {
   opacity: 0.6;
 }
+.minimum
+{
+  opacity: 0.6;
+  padding-right: 30px;
+}
 .maximum
 {
   font-weight: bolder;
@@ -108,4 +115,8 @@ a:hover{
 {
   position: relative;
   top: 20px;
+}
+.currentDayWeather
+{
+  line-height: 0;
 }

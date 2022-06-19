@@ -29,8 +29,9 @@ export default function Weather(props) {
         
         <div className="row">
           <div className="col-2">
-            <p><span className="minimum">9</span><img className="icon" src={sunnyclouds} alt="Sunny Clouds" /><span className="maximum">15</span></p>
+            <img className="icon" src={sunnyclouds} alt="Sunny Clouds" />
             <span className="temperature">{Math.round(temperature)}°C</span>
+            <p className="currentDayWeather"><span className="minimum">9</span><span className="maximum">15</span></p>
           </div>
           <div className="col-2 mt-2 weather2">
             <ul>
