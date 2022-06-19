@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { ThreeDots } from  'react-loader-spinner';
 import sunnyclouds from "../src/images/sunny-clouds.png";
 
+
 export default function Weather(props) {
   let [temperature, setTemperature] = useState("null");
   let [city, setCity] = useState("null");
