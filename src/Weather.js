@@ -29,7 +29,7 @@ export default function Weather(props) {
         
         <div className="row">
           <div className="col-2">
-            <img className="icon" src={sunnyclouds} alt="Sunny Clouds" />
+            <p><span className="minimum">9</span><img className="icon" src={sunnyclouds} alt="Sunny Clouds" /><span className="maximum">15</span></p>
             <span className="temperature">{Math.round(temperature)}°C</span>
           </div>
           <div className="col-2 mt-2 weather2">

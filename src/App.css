@@ -96,3 +96,16 @@ a:hover{
 {
   color:rgb(48, 147, 193);
 }
+.minimum
+{
+  opacity: 0.6;
+}
+.maximum
+{
+  font-weight: bolder;
+}
+.minimum, .maximum
+{
+  position: relative;
+  top: 20px;
+}
