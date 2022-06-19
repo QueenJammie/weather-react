@@ -1,5 +1,5 @@
 import React from "react";
-import sunnyclouds from "../src/images/sunny-clouds.png";
+import brokenClouds from "../src/images/sunny-clouds.png";
 import storms from "../src/images/tstorms.png";
 import sun from "../src/images/sun.png";
 
@@ -11,8 +11,8 @@ export default function Forecast()
             <div className="col-2 forecast">
                 <p><span class="weekDay">Saturday</span><br />
                 06 / 18<br />
-                Sunny cloudy</p>
-                <img className="forecastIcon" src={sunnyclouds} alt="Sunny Clouds" />
+                Broken clouds</p>
+                <img className="forecastIcon" src={brokenClouds} alt="Broken clouds" />
                 <p><span className="minimum">8</span><span className="maximum">12</span></p>
             </div>
             <div className="col-2 forecast">
@@ -25,8 +25,8 @@ export default function Forecast()
             <div className="col-2 forecast">
                 <p><span class="weekDay">Monday</span><br />
                 06 / 20<br />
-                Sunny cloudy</p>
-                <img className="forecastIcon" src={sunnyclouds} alt="Sunny Clouds" />
+                Broken clouds</p>
+                <img className="forecastIcon" src={brokenClouds} alt="Broken clouds" />
                 <p><span className="minimum">10</span><span className="maximum">20</span></p>
             </div>
             <div className="col-2 forecast">

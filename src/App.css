@@ -85,10 +85,21 @@ a:hover{
 .Weather
 {
   border: 1px solid #dadde1;
+  border-radius: 4px;
   padding: 30px;
   padding-top: 10px;
   margin: auto;
   max-width: 1000px;
+}
+body
+{
+  max-width: 1000px;
+  margin: 0 auto;
+}
+footer
+{
+  font-size: 13px;
+  margin: 6px 0;
 }
 .weather2
 {
@@ -134,4 +145,6 @@ a:hover{
 .unit
 {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  position: relative;
+  bottom: 16px;
 }

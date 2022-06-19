@@ -3,7 +3,7 @@ import axios from "axios";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { ThreeDots } from  'react-loader-spinner';
-import sunnyclouds from "../src/images/sunny-clouds.png";
+import brokenClouds from "../src/images/sunny-clouds.png";
 
 
 export default function Weather(props) {
@@ -33,7 +33,7 @@ export default function Weather(props) {
         
         <div className="row">
           <div className="col-3">
-            <img className="icon" src={sunnyclouds} alt="Sunny Clouds" />
+            <img className="icon" src={brokenClouds} alt="Broken Clouds" />
             <span className="temperature">{Math.round(temperature)}</span>
             <span className="unit">°C | <a href={farenheitConversion} class="farenheitConversion">°F</a></span>
             <div className="currentDayWeather"><span className="Minimum">9</span><span className="maximum">15</span></div>
