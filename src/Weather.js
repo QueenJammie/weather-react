@@ -43,7 +43,7 @@ export default function Weather(props) {
             <span className="temperature">{weatherData.temperature}</span>
             <span className="unit">°C/<a href={farenheitConversion} class="farenheitConversion">°F</a></span>
             <div className="currentDayWeather"><span className="Minimum">{weatherData.tempMin}</span><span className="maximum">{weatherData.tempMax}</span></div>
-          </div>
+          </div> 
           <div className="col-3 mt-2 weather2">
             <ul>
               <li>{weatherData.main}</li>
