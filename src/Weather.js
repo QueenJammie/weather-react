@@ -9,20 +9,15 @@ import brokenClouds from "../src/images/sunny-clouds.png";
 
 export default function Weather(props) {
   let [temperature, setTemperature] = useState("null");
-  let [city, setCity] = useState("null");
 
-  function showCity(response)
-  {
-    setCity(response.data.name);
-  }
   function showTemperature(response) {
     setTemperature(response.data.main.temp);
   }
 
   let apiKey = "707e44e4e5e95bcdf4a8e607ba31db1d";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.city}&appid=${apiKey}&units=metric`;
+  let city = "Sherbrooke";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showTemperature);
-  axios.get(apiUrl).then(showCity);
 
   if (temperature) {
     function farenheitConversion()
