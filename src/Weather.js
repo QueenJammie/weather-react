@@ -7,34 +7,34 @@ import brokenClouds from "../src/images/sunny-clouds.png";
 
 
 export default function Weather(props) {
-  let [temperature, setTemperature] = useState("null");
-  let [city, setCity] = useState("null");
+  let [loaded, setLoaded] = useState(true);
+  let [weatherData, setWeatherData] = useState({});
+  //let [city, setCity] = useState("null");
 
-  function showCity(response)
-  {
-    setCity(response.data.name);
-  }
   function showTemperature(response) {
-    setTemperature(response.data.main.temp);
+    console.log(response.data);
+    setWeatherData({
+      temperature: Math.round(response.data.main.temp),
+      wind: 3,
+      name: response.data.name,
+      
+    })
+    setLoaded(true);
   }
 
-  let apiKey = "707e44e4e5e95bcdf4a8e607ba31db1d";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.city}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(showTemperature);
-  axios.get(apiUrl).then(showCity);
+  function farenheitConversion()
+  {
+    return "";
+  }
 
-  if (temperature) {
-    function farenheitConversion()
-    {
-      return null;
-    }
+  if (loaded) {
     return (
       <div className="container">
         
         <div className="row">
           <div className="col-3">
             <img className="icon" src={brokenClouds} alt="Broken Clouds" />
-            <span className="temperature">{Math.round(temperature)}</span>
+            <span className="temperature">10</span>
             <span className="unit">°C | <a href={farenheitConversion} class="farenheitConversion">°F</a></span>
             <div className="currentDayWeather"><span className="Minimum">9</span><span className="maximum">15</span></div>
           </div>
@@ -42,12 +42,12 @@ export default function Weather(props) {
             <ul>
               <li>Clouds</li>
               <li>Humidity: 92%</li>
-              <li>Wind: 3 km/h</li>
+              <li>Wind: 10 km/h</li>
             </ul>
           </div>
           <div className="col-3 ms-5 mt-2">
             <ul className="overview">
-              <li className="actual-city">{city}</li>
+              <li className="actual-city">Sherbrooke</li>
               <li>Friday 15:57</li>
               <li>broken clouds</li>
             </ul>
@@ -56,6 +56,12 @@ export default function Weather(props) {
       </div>
     );
   } else {
-    return <p><ThreeDots color="#00BFFF" height={80} width={80} class="center" /></p>;
+      let apiKey = "a4fb4ddbf2b13a9459eb4e9f970296ce";
+      let city = "Sherbrooke";
+      let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+      axios.get(apiUrl).then(showTemperature);
+
+      return <p><ThreeDots color="#00BFFF" height={80} width={80} class="center" /></p>;
+    
   }
 }
