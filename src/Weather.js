@@ -7,7 +7,7 @@ import brokenClouds from "../src/images/sunny-clouds.png";
 
 
 export default function Weather(props) {
-  let [loaded, setLoaded] = useState(true);
+  let [loaded, setLoaded] = useState(false);
   let [weatherData, setWeatherData] = useState({});
   //let [city, setCity] = useState("null");
 
