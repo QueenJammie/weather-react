@@ -136,7 +136,7 @@ footer
 }
 .btn
 {
-  width: 80px;
+  width: 101px;
 }
 .farenheitConversion:hover
 {
@@ -149,4 +149,8 @@ footer
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   position: relative;
   bottom: 16px;
+}
+.noListStyle
+{
+  list-style-type: none;
 }

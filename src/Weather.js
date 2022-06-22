@@ -50,8 +50,8 @@ export default function Weather(props) {
           <div className="col-4 mt-2">
             <ul className="overview">
               <li className="actual-city">{weatherData.city}, {weatherData.country}</li>
-              <li><FormattedDate date={weatherData.date} /></li>
-              <li className="text-capitalize">{weatherData.description}</li>
+              <li className="noListStyle"><FormattedDate date={weatherData.date} /></li>
+              <li className="noListStyle text-capitalize">{weatherData.description}</li>
             </ul>
           </div>
         </div>
