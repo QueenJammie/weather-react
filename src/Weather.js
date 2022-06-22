@@ -47,7 +47,7 @@ export default function Weather(props) {
               <li>Wind: {weatherData.wind} km/h</li>
             </ul>
           </div>
-          <div className="col-4 mt-2">
+          <div className="col-5 mt-2">
             <ul className="overview">
               <li className="actual-city">{weatherData.city}, {weatherData.country}</li>
               <li className="noListStyle"><FormattedDate date={weatherData.date} /></li>

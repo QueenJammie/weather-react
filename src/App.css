@@ -85,17 +85,19 @@ a:hover{
 }
 .Weather
 {
-  border: 1px solid #dadde1;
+  border: 2px solid #dadde1;
   border-radius: 4px;
   padding: 30px;
   padding-top: 10px;
   margin: auto;
   max-width: 1000px;
+  background-color: white;
 }
 body
 {
   max-width: 1000px;
   margin: 0 auto;
+  background-color: rgba(243, 243, 125, 0.908);
 }
 footer
 {
@@ -137,6 +139,8 @@ footer
 .btn
 {
   width: 101px;
+  position: relative;
+  top: 10px;
 }
 .farenheitConversion:hover
 {
