@@ -28,7 +28,7 @@ export default function App() {
           </div>
         </div>
         
-          <Weather city="Sherbrooke" />
+          <Weather defaultCity="Paris" />
           <Forecast city="Sherbrooke"className="mt-5" />
         </div>
           <footer>

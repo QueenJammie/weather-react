@@ -8,18 +8,25 @@ import brokenClouds from "../src/images/sunny-clouds.png";
 
 
 export default function Weather(props) {
-  let [temperature, setTemperature] = useState("null");
+  let [weatherData, setWeatherData] = useState({loaded : false});
 
   function showTemperature(response) {
-    setTemperature(response.data.main.temp);
+    setWeatherData({
+      loaded: true,
+      date: 'Friday 15:57',
+      city: response.data.name,
+      temperature: response.data.main.temp,
+      humidity: response.data.main.humidity,
+      country: response.data.sys.country,
+      wind: Math.round(response.data.wind.speed),
+      description: response.data.weather[0].description,
+      main: response.data.weather[0].main,
+      iconUrl: '',
+    });
+    console.log(response.data);
   }
 
-  let apiKey = "707e44e4e5e95bcdf4a8e607ba31db1d";
-  let city = "Sherbrooke";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(showTemperature);
-
-  if (temperature) {
+  if (weatherData.loaded) {
     function farenheitConversion()
     {
       return null;
@@ -29,29 +36,33 @@ export default function Weather(props) {
         
         <div className="row">
           <div className="col-3">
-            <img className="icon" src={brokenClouds} alt="Broken Clouds" />
-            <span className="temperature">{Math.round(9)}</span>
+            <img className="icon" src={brokenClouds} alt="{weatherData.description}" />
+            <span className="temperature">{Math.round(weatherData.temperature)}</span>
             <span className="unit">°C/<a href={farenheitConversion} class="farenheitConversion">°F</a></span>
             <div className="currentDayWeather"><span className="Minimum">9</span><span className="maximum">15</span></div>
           </div>
           <div className="col-3 mt-2 weather2">
             <ul>
-              <li>Clouds</li>
-              <li>Humidity: 92%</li>
-              <li>Wind: 3 km/h</li>
+              <li>{weatherData.main}</li>
+              <li>Humidity: {weatherData.humidity}%</li>
+              <li>Wind: {weatherData.wind} km/h</li>
             </ul>
           </div>
           <div className="col-3 ms-5 mt-2">
             <ul className="overview">
-              <li className="actual-city">Sherbrooke</li>
-              <li>Friday 15:57</li>
-              <li>broken clouds</li>
+              <li className="actual-city">{weatherData.city}, {weatherData.country}</li>
+              <li>{weatherData.date}</li>
+              <li className="text-capitalize">{weatherData.description}</li>
             </ul>
           </div>
         </div>
       </div>
     );
   } else {
+    const apiKey = "707e44e4e5e95bcdf4a8e607ba31db1d";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(showTemperature);
+
     return <p><ThreeDots color="#00BFFF" height={80} width={80} class="center" /></p>;
   }
 }
