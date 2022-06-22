@@ -4,6 +4,7 @@ import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { ThreeDots } from  'react-loader-spinner';
 import brokenClouds from "../src/images/sunny-clouds.png";
+import FormattedDate from "./FormattedDate"
 
 
 
@@ -13,7 +14,7 @@ export default function Weather(props) {
   function showTemperature(response) {
     setWeatherData({
       loaded: true,
-      date: 'Friday 15:57',
+      date: new Date(response.data.dt * 1000),
       city: response.data.name,
       temperature: response.data.main.temp,
       humidity: response.data.main.humidity,
@@ -23,7 +24,6 @@ export default function Weather(props) {
       main: response.data.weather[0].main,
       iconUrl: '',
     });
-    console.log(response.data);
   }
 
   if (weatherData.loaded) {
@@ -39,7 +39,6 @@ export default function Weather(props) {
             <img className="icon" src={brokenClouds} alt="{weatherData.description}" />
             <span className="temperature">{Math.round(weatherData.temperature)}</span>
             <span className="unit">°C/<a href={farenheitConversion} class="farenheitConversion">°F</a></span>
-            <div className="currentDayWeather"><span className="Minimum">9</span><span className="maximum">15</span></div>
           </div>
           <div className="col-3 mt-2 weather2">
             <ul>
@@ -48,10 +47,10 @@ export default function Weather(props) {
               <li>Wind: {weatherData.wind} km/h</li>
             </ul>
           </div>
-          <div className="col-4 ms-5 mt-2">
+          <div className="col-4 mt-2">
             <ul className="overview">
               <li className="actual-city">{weatherData.city}, {weatherData.country}</li>
-              <li>{weatherData.date}</li>
+              <li><FormattedDate date={weatherData.date} /></li>
               <li className="text-capitalize">{weatherData.description}</li>
             </ul>
           </div>
