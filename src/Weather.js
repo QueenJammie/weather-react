@@ -35,7 +35,7 @@ export default function Weather(props) {
       <div className="container">
         
         <div className="row">
-          <div className="col-3">
+          <div className="col-4">
             <img className="icon" src={brokenClouds} alt="{weatherData.description}" />
             <span className="temperature">{Math.round(weatherData.temperature)}</span>
             <span className="unit">°C/<a href={farenheitConversion} class="farenheitConversion">°F</a></span>
