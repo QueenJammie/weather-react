@@ -48,7 +48,7 @@ export default function Weather(props) {
               <li>Wind: {weatherData.wind} km/h</li>
             </ul>
           </div>
-          <div className="col-3 ms-5 mt-2">
+          <div className="col-4 ms-5 mt-2">
             <ul className="overview">
               <li className="actual-city">{weatherData.city}, {weatherData.country}</li>
               <li>{weatherData.date}</li>
