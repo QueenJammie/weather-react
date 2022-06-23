@@ -31,23 +31,24 @@ export default function Weather(props) {
     {
       return null;
     }
+    
     return (
       <div className="container">
         
         <div className="row">
-          <div className="col-4">
+          <div className="col-6 col-sm-4">
             <img className="icon" src={brokenClouds} alt="{weatherData.description}" />
             <span className="temperature">{Math.round(weatherData.temperature)}</span>
             <span className="unit">°C/<a href={farenheitConversion} class="farenheitConversion">°F</a></span>
           </div>
-          <div className="col-3 mt-2 weather2">
+          <div className="col-6 col-sm-3 mt-2 weather2">
             <ul>
               <li>{weatherData.main}</li>
               <li>Humidity: {weatherData.humidity}%</li>
               <li>Wind: {weatherData.wind} km/h</li>
             </ul>
           </div>
-          <div className="col-5 mt-2">
+          <div className="col-12 col-sm-5 center-block mt-2">
             <ul className="overview">
               <li className="actual-city">{weatherData.city}, {weatherData.country}</li>
               <li className="noListStyle"><FormattedDate date={weatherData.date} /></li>

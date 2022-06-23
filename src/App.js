@@ -37,8 +37,7 @@ export default function App() {
             <input type="button" value="Current" className="btn-app btn btn-success mb-1" />
           </div>
         </div>
-        
-          <Weather defaultCity="Las vegas" />
+          <Weather defaultCity="Sherbrooke" />
           <Forecast city="Sherbrooke"className="mt-5" />
         </div>
           <footer>
