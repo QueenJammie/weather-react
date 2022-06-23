@@ -1,3 +1,11 @@
+@media (max-width: 960px)
+{
+  body
+  {
+    max-width: 100%;
+  }
+}
+
 ul, li
 {
   list-style: square;
