@@ -7,7 +7,7 @@ import sun from "../src/images/sun.png";
 export default function Forecast()
 {
     return (
-        <div className="row mt-5">
+        <div className="row md-auto mt-5">
             <div className="col-2 forecast">
                 <p><span class="weekDay">Saturday</span><br />
                 06 / 18<br />
