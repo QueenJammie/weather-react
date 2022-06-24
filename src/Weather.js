@@ -4,7 +4,7 @@ import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { ThreeDots } from  'react-loader-spinner';
 import brokenClouds from "../src/images/sunny-clouds.png";
-import FormattedDate from "./FormattedDate"
+import FormattedDate from "./FormattedDate" 
 
 
 
@@ -33,15 +33,15 @@ export default function Weather(props) {
     }
     
     return (
-      <div className="container">
+      <div className="container weather-js">
         
         <div className="row">
-          <div className="col-6 col-sm-4">
+          <div className="col-6 col-sm-5">
             <img className="icon" src={brokenClouds} alt="{weatherData.description}" />
             <span className="temperature">{Math.round(weatherData.temperature)}</span>
             <span className="unit">°C/<a href={farenheitConversion} class="farenheitConversion">°F</a></span>
           </div>
-          <div className="col-6 col-sm-3 mt-2 weather2">
+          <div className="col-6 col-sm-2 mt-2 weather2">
             <ul>
               <li>{weatherData.main}</li>
               <li>Humidity: {weatherData.humidity}%</li>
@@ -49,7 +49,7 @@ export default function Weather(props) {
             </ul>
           </div>
           <div className="col-12 col-sm-5 center-block mt-2">
-            <ul className="overview">
+            <ul className="overview p-0 text-center text-sm-end">
               <li className="actual-city">{weatherData.city}, {weatherData.country}</li>
               <li className="noListStyle"><FormattedDate date={weatherData.date} /></li>
               <li className="noListStyle text-capitalize">{weatherData.description}</li>
