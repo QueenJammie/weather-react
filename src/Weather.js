@@ -4,7 +4,7 @@ import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { ThreeDots } from  'react-loader-spinner';
 import FormattedDate from "./FormattedDate";
-
+import WeatherTemperature from "./WeatherTemperature";
 
 
 export default function Weather(props) {
@@ -43,11 +43,6 @@ export default function Weather(props) {
   {
     setCity(event.target.value);
   }
-  
-  function farenheitConversion()
-  {
-    return null;
-  }
 
   if (weatherData.loaded) {
     return (
@@ -67,9 +62,9 @@ export default function Weather(props) {
         </form>
         <div className="row">
           <div className="col-6 col-sm-4">
+            <WeatherTemperature celcius={weatherData.temperature} />
             <img className="icon" src={weatherData.iconUrl} alt={weatherData.description} />
-            <span className="temperature">{Math.round(weatherData.temperature)}</span>
-            <span className="unit">°C|<a href={farenheitConversion} class="farenheitConversion">°F</a></span>
+
           </div>
           <div className="col-6 col-sm-3 mt-2 weather2">
             <ul>
