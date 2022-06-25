@@ -3,7 +3,6 @@ import axios from "axios";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { ThreeDots } from  'react-loader-spinner';
-import brokenClouds from "../src/images/sunny-clouds.png";
 import FormattedDate from "./FormattedDate";
 
 
@@ -13,6 +12,7 @@ export default function Weather(props) {
   const [city, setCity] = useState(props.defaultCity);
 
   function showTemperature(response) {
+    console.log(response.data);
     setWeatherData({
       loaded: true,
       date: new Date(response.data.dt * 1000),
@@ -23,7 +23,7 @@ export default function Weather(props) {
       wind: Math.round(response.data.wind.speed),
       description: response.data.weather[0].description,
       main: response.data.weather[0].main,
-      iconUrl: '',
+      iconUrl: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
     });
   }
   function search()
@@ -43,12 +43,14 @@ export default function Weather(props) {
   {
     setCity(event.target.value);
   }
+  
+  function farenheitConversion()
+  {
+    return null;
+  }
 
   if (weatherData.loaded) {
-    function farenheitConversion()
-    {
-      return null;
-    }
+    
     
     return (
       <div className="weatherInfos">
@@ -67,7 +69,7 @@ export default function Weather(props) {
         </form>
         <div className="row">
           <div className="col-6 col-sm-4">
-            <img className="icon" src={brokenClouds} alt="{weatherData.description}" />
+            <img className="icon" src={weatherData.iconUrl} alt={weatherData.description} />
             <span className="temperature">{Math.round(weatherData.temperature)}</span>
             <span className="unit">°C|<a href={farenheitConversion} class="farenheitConversion">°F</a></span>
           </div>
