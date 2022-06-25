@@ -50,8 +50,6 @@ export default function Weather(props) {
   }
 
   if (weatherData.loaded) {
-    
-    
     return (
       <div className="weatherInfos">
         <form onSubmit={handleSubmit}>
@@ -92,7 +90,6 @@ export default function Weather(props) {
     );
   } else {
     search();
-
     return <ThreeDots color="#198754" height={80} width={80} class="m-auto" />;
   }
 }
