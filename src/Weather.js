@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { ThreeDots } from  'react-loader-spinner';
 import FormattedDate from "./FormattedDate";
 import WeatherTemperature from "./WeatherTemperature";
+import Forecast from "./Forecast";
 
 
 export default function Weather(props) {
@@ -12,9 +13,9 @@ export default function Weather(props) {
   const [city, setCity] = useState(props.defaultCity);
 
   function showTemperature(response) {
-    console.log(response.data);
     setWeatherData({
       loaded: true,
+      coordinates: response.data.coord,
       date: new Date(response.data.dt * 1000),
       city: response.data.name,
       temperature: response.data.main.temp,
@@ -62,9 +63,10 @@ export default function Weather(props) {
         </form>
         <div className="row">
           <div className="col-6 col-sm-4">
+            <p className="ms-5">Monday</p>
             <img className="icon" src={weatherData.iconUrl} alt={weatherData.description} />
-            <WeatherTemperature celcius={weatherData.temperature} />
-
+            <WeatherTemperature celcius={weatherData.temperature} /><br />
+            
           </div>
           <div className="col-6 col-sm-3 mt-2 weather2">
             <ul>
@@ -81,6 +83,7 @@ export default function Weather(props) {
             </ul>
           </div>
         </div>
+        <Forecast coordinates={weatherData.coordinates} className="mt-5" />
       </div>
     );
   } else {

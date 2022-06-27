@@ -1,48 +1,42 @@
-import React from "react";
-import brokenClouds from "../src/images/sunny-clouds.png";
-import storms from "../src/images/tstorms.png";
-import sun from "../src/images/sun.png";
+import React, { useState } from "react";
+import axios from "axios";
+import ForecastDay from "./ForecastDay";
 
 
-export default function Forecast()
+export default function Forecast(props)
 {
+  let [loaded, setLoaded] = useState(false);
+  let [forecastData, setForecastData] = useState(null);
+
+  function handleResponse(response)
+  {
+    setForecastData(response.data.daily);
+    setLoaded(true);
+  }
+  if (loaded)
+  {
     return (
-        <div className="row mt-5">
-            <div className="col-2 forecast">
-                <p><span class="weekDay">Saturday</span><br />
-                06 / 18<br />
-                Broken clouds</p>
-                <img className="forecastIcon" src={brokenClouds} alt="Broken clouds" />
-                <p><span className="minimum">8</span><span className="maximum">12</span></p>
-            </div>
-            <div className="col-2 forecast">
-                <p><span class="weekDay">Sunday</span><br />
-                06 / 19<br />
-                Storms</p>
-                <img className="forecastIcon" src={storms} alt="Storms" />
-                <p><span className="minimum">6</span><span className="maximum">16</span></p>
-            </div>
-            <div className="col-2 forecast">
-                <p><span class="weekDay">Monday</span><br />
-                06 / 20<br />
-                Broken clouds</p>
-                <img className="forecastIcon" src={brokenClouds} alt="Broken clouds" />
-                <p><span className="minimum">10</span><span className="maximum">20</span></p>
-            </div>
-            <div className="col-2 forecast">
-                <p><span class="weekDay">Thuesday</span><br />
-                06 / 21<br />
-                Sun</p>
-                <img className="forecastIcon" src={sun} alt="Sun" />
-                <p><span className="minimum">14</span><span className="maximum">23</span></p>
-            </div>
-            <div className="col-2 forecast">
-                <p><span class="weekDay">Wednesday</span><br />
-                06 / 22<br />
-                Sun</p>
-                <img className="forecastIcon" src={sun} alt="Sun" />
-                <p><span className="minimum">16</span><span className="maximum">25</span></p>
-            </div>
-        </div>
-    );
+    <div className="row mt-5">
+      <ForecastDay data={forecastData[1]} />
+      <ForecastDay data={forecastData[2]} />
+      <ForecastDay data={forecastData[3]} />
+      <ForecastDay data={forecastData[4]} />
+      <ForecastDay data={forecastData[5]} />
+    </div>
+  );
+  }
+  else
+  {
+    let apiKey = "707e44e4e5e95bcdf4a8e607ba31db1d";
+    let longitude = props.coordinates.lon;
+    let latitude = props.coordinates.lat;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
+
+    axios.get(apiUrl).then(handleResponse);
+
+    return null;
+  }
+    
+
+    
 }

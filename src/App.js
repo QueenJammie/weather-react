@@ -2,7 +2,6 @@ import logo from './logo.svg';
 import React from "react";
 import ReactDOM from "react-dom";
 import Weather from "./Weather";
-import Forecast from "./Forecast";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'; 
@@ -19,7 +18,6 @@ export default function App() {
           <div class="row">
           
           <Weather defaultCity="Sherbrooke" />
-          <Forecast city="Sherbrooke"className="mt-5" />
           </div>
         </div>
           <footer>
