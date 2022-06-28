@@ -63,7 +63,7 @@ export default function Weather(props) {
         </form>
         <div className="row">
           <div className="col-6 col-sm-4">
-            <p className="ms-5">Monday</p>
+            <p className="ms-5"></p>
             <img className="icon" src={weatherData.iconUrl} alt={weatherData.description} />
             <WeatherTemperature celcius={weatherData.temperature} /><br />
             
