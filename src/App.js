@@ -17,7 +17,7 @@ export default function App() {
         <div className="Weather">
           <div class="row">
           
-          <Weather defaultCity="London" />
+          <Weather defaultCity="Sherbrooke" />
           </div>
         </div>
           <footer>
