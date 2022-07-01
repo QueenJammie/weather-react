@@ -90,13 +90,16 @@ a:hover{
   padding-top: 10px;
   margin: auto;
   max-width: 1000px;
-  background-color: white;
+  background-color: rgb(204, 206, 196);
 }
 body
 {
   max-width: 1000px;
   margin: 0 auto;
-  background-color: rgba(243, 243, 125, 0.908);
+  background-image: url(./images/background.jpg);
+  background-position: left top;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 footer
 {
