@@ -3,15 +3,6 @@ ul, li
   list-style: square;
 }
 
-a
-{
-  text-decoration: none;
-  color: blueviolet;
-}
-a:hover{
-  color: rgb(193, 48, 157);
-}
-
 .App {
   text-align: justify;
 }
@@ -92,6 +83,25 @@ a:hover{
   max-width: 1000px;
   background-color: rgb(204, 206, 196);
 }
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+a:hover {
+  color: #ea92ba;
+}
+
+footer p {
+  background-color: #fff;
+}
+
+.footer {
+  margin-top: 15px;
+  
+}
+
 body
 {
   max-width: 1000px;
@@ -101,14 +111,19 @@ body
   background-attachment: fixed;
   background-repeat: no-repeat;
 }
+body .list-cities
+{
+  text-align: left;
+}
 footer
 {
+  text-align: center;
   font-size: 13px;
   margin: 6px 0;
 }
 .weather2
 {
-  text-align: left;
+  text-align: center;
 }
 .weekDay
 {
