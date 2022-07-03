@@ -44,10 +44,6 @@ ul, li
   }
 }
 
-.list-cities
-{
-  margin-right: 2em;
-}
 .overview {
   text-align: right;
 }
@@ -164,6 +160,11 @@ footer
   cursor: pointer;
   font-weight: bold;
   text-decoration: underline;
+}
+
+.search
+{
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 .unit
 {
